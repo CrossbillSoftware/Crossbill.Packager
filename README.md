@@ -261,9 +261,9 @@ The file supports the syntax used by configuration files of Crossbill Install, o
 
 ## License
 
-The Crossbill Software License Agreement is located in [plugins/Crossbill.Plugins.DataVersioning.Git/LICENSE.txt](plugins/Crossbill.Plugins.DataVersioning.Git/LICENSE.txt) file.
+The Crossbill Software License Agreement is located in [LICENSE.txt](LICENSE.txt) file.
 
-The Third Party Code in Crossbill Products notice is located in [plugins/Crossbill.Plugins.DataVersioning.Git/third-party-code.txt](plugins/Crossbill.Plugins.DataVersioning.Git/third-party-code.txt) file.
+The Third Party Code in Crossbill Products notice is located in [third-party-code.txt](third-party-code.txt) file.
 
-The copyright and license texts for the third party code can be found in [plugins/Crossbill.Plugins.DataVersioning.Git/third-party-notices.txt](plugins/Crossbill.Plugins.DataVersioning.Git/third-party-notices.txt) file.
+The copyright and license texts for the third party code can be found in [third-party-notices.txt](third-party-notices.txt) file.
 
