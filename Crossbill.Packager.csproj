@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+	
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+	</PropertyGroup>
+	
+	<PropertyGroup>
+		<AssemblyTitle>Crossbill.Packager</AssemblyTitle>
+		<Description>Application for packaging plugins and apps ready for deployment</Description>
+		<Copyright>Copyright © Crossbill, 2016, All Rights Reserved</Copyright>
+		<Product>Crossbill Packager</Product>
+		<Company>Crossbill</Company>
+		<Authors>Pavel Korsukov</Authors>
+		<ApplicationIcon>app.ico</ApplicationIcon>
+		<OutputType>Exe</OutputType>
+		<StartupObject>Crossbill.Packager.Program</StartupObject>
+		<RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+		<RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Web.Xdt" Version="3.1.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="SharpZipLib" Version="1.4.2" />
+		<PackageReference Include="NodaTime" Version="3.1.10" />
+		<PackageReference Include="NodaTime.Serialization.JsonNet" Version="3.1.0" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <Reference Include="Crossbill.Common">
+	    <HintPath>..\Crossbill.Common\Crossbill.Common\bin\$(Configuration)\net8.0\Crossbill.Common.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Crossbill.Install.Lib">
+	    <HintPath>..\Crossbill.Common\Crossbill.Install.Lib\bin\$(Configuration)\net8.0\Crossbill.Install.Lib.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <None Include="app.ico" />
+	  <None Include="favicon-128x128.png" />
+	</ItemGroup>
+	
+  <ItemGroup Condition="'$(Configuration)' == 'Release'">
+	<None Include="d:\Projects\Crossbill.Common\config\licenses\*.txt">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+  </ItemGroup>
+  
+  <Target Name="PreBuild" AfterTargets="PreBuildEvent" Condition="'$(Configuration)' == 'Release'">
+    <Exec Command="c:\Crossbill.LicenseNoticeAggregator.lnk /project &quot;$(ProjectPath)&quot; /output &quot;$(TargetDir)third-party-notices.txt&quot; /extra &quot;d:\Projects\Crossbill.Common\config\extra&quot;" />
+  </Target>
+	
+</Project>

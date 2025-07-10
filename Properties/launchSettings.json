@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Crossbill.Packager": {
+      "commandName": "Project",
+      "commandLineArgs": " /mode zip /path \"d:\\Projects\\Crossbill.Common\\Crossbill.Central.Web\\.\" /dest \"d:\\Projects\\Crossbill.Common\\Crossbill.Central.Web\\bin/Crossbill.Central.Web.zip\""
+    }
+  }
+}
