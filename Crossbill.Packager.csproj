@@ -45,14 +45,9 @@
 	  <None Include="favicon-128x128.png" />
 	</ItemGroup>
 	
-  <ItemGroup Condition="'$(Configuration)' == 'Release'">
-	<None Include="d:\Projects\Crossbill.Common\config\licenses\*.txt">
-		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
-  </ItemGroup>
-  
-  <Target Name="PreBuild" AfterTargets="PreBuildEvent" Condition="'$(Configuration)' == 'Release'">
-    <Exec Command="c:\Crossbill.LicenseNoticeAggregator.lnk /project &quot;$(ProjectPath)&quot; /output &quot;$(TargetDir)third-party-notices.txt&quot; /extra &quot;d:\Projects\Crossbill.Common\config\extra&quot;" />
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent" Condition="'$(Configuration)' == 'Release'">
+	<Exec Command="xcopy /E /Y /d /I &quot;d:\Projects\Crossbill.Common\config\licenses\*.txt&quot; &quot;$(ProjectDir)&quot;" />
+	<Exec Command="c:\Crossbill.LicenseNoticeAggregator.lnk /project &quot;$(ProjectPath)&quot; /output &quot;$(ProjectDir)third-party-notices.txt&quot;" />
   </Target>
 	
 </Project>
