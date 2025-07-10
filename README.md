@@ -38,10 +38,10 @@ The utility can be run during the project compilation using the following config
 > The build process can be configured according to your needs. In the above sample the Crossbill Packager prepares the files as a Plugin.zip file and MSBuild does the rest producing a package in .nupkg format.
 > In the configuration like the following, everything is packed by Crossbill Packager only:
 > ```
-<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Condition="'$(Configuration)' == 'Release'" Command="c:\Crossbill.Packager.exe /mode pack /path &quot;$(ProjectDir).&quot; /dest &quot;$(ProjectDir)bin/Plugin.zip&quot;" />
-</Target>
-```
+> <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+>     <Exec Condition="'$(Configuration)' == 'Release'" Command="c:\Crossbill.Packager.exe /mode pack /path &quot;$(ProjectDir).&quot; /dest &quot;$(ProjectDir)bin/Plugin.zip&quot;" />
+> </Target>
+> ```
 
 ## Package any app for automated deployment
 
