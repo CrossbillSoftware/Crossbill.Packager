@@ -115,9 +115,9 @@ Crossbill.Packager.exe /mode pack /path "d:/Projects/Crossbill.Plugins/Crossbill
 * /path - the directory containing the files to package;
 * /dest - the target destination file;
 * /mode - the packaging mode. The following modes are supported:
-** zip - packs files listed in files.txt as a .zip archive;
-** pack - packs files listed in files.txt as a .zip archive and then packs the result as a .nupkg file ready for Crossbill Central, Crossbill Seeder and Crossbill Nest;
-** copy - copy files listed in files.txt from path to dest directory.
+  - zip - packs files listed in files.txt as a .zip archive;
+  - pack - packs files listed in files.txt as a .zip archive and then packs the result as a .nupkg file ready for Crossbill Central, Crossbill Seeder and Crossbill Nest;
+  - copy - copy files listed in files.txt from path to dest directory.
 
 ## Sample files.txt configuration
 
